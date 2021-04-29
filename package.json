@@ -1,0 +1,22 @@
+{
+  "name": "db-management-template",
+  "version": "1.0.0",
+  "description": "## Pre-requisite Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "build": "docker-compose build",
+    "stop": "docker-compose stop",
+    "remove": "docker-compose down",
+    "baseline:configdb": "FLYWAY_URL=jdbc:mysql://localhost:3306/template_db DB_USER=sa DB_PWD=password flyway -configFiles='./template_db/flyway/flyway.config' baseline",
+    "migrate:configdb:": "FLYWAY_URL=jdbc:mysql://localhost:3306/template_db DB_USER=sa DB_PWD=password flyway -configFiles='./template_db/flyway/flyway.config' migrate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dyihoon90/db-management-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}

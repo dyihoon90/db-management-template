@@ -1,0 +1,7 @@
+# docker-compose.yml used for development
+version: "3"
+services:
+  template_db:
+    build: template_db
+    ports:
+      - "3306:3306"
